@@ -1,0 +1,46 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Add New Patient Details</h2>
+        <form [formGroup]="createForm" (ngSubmit)="createPostData()">
+            <input type="hidden" formControlName="_id">
+        
+            <label for="username">Patient Name:</label>
+            <input formControlName="username" type="text" id="username" name="username" required>
+        
+            <label for="title">Disease:</label>
+            <select formControlName="title" id="title" name="title" required>
+                <option value="">Select Disease</option>
+                <option value="Chickenpox">Chickenpox</option>
+                <option value="Measles">Measles</option>
+                <option value="Influenza">Influenza</option>
+            </select>
+            <br><br>
+        
+            <label for="date">Date:</label>
+            <input formControlName="date" type="date" id="date" name="date" required>
+            <br><br>
+        
+            <label for="content">Doctor Name:</label>
+            <select formControlName="content" id="content" name="content" required>
+                <option value="">Select Doctor</option>
+                <option value="Dr. Smith">Dr. Smith</option>
+                <option value="Dr. Johnson">Dr. Johnson</option>
+                <option value="Dr. Patel">Dr. Patel</option>
+            </select>
+            <br><br>
+        
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+</body>
+</html>
+<app-footer></app-footer>
